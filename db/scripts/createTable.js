@@ -6,7 +6,7 @@ async function createTable() {
       id SERIAL PRIMARY KEY,
       item TEXT NOT NULL,
       completed BOOL NOT NULL
-    );`
+    ); INSERT INTO shopping (item, completed) VALUES ($1, $2)`, ['fruit', true]
   );
   console.log("shopping table created", created.command);
 }
